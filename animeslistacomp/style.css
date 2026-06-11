@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: url("img/background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: white;
+
+  min-height: 100vh;
+
+  padding: 30px;
+  position: relative;
+}
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,.55);
+
+  z-index: -1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  color: white;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,.2),
+    0 0 25px rgba(255,255,255,.2);
+}
+
+.formulario {
+  display: grid;
+  gap: 12px;
+
+  background: rgba(20,20,20,.35);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  margin-bottom: 25px;
+}
+
+input,
+select {
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: rgba(0,0,0,.35);
+
+  color: white;
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,.7);
+}
+
+button {
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #7c3aed
+  );
+
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(124,58,237,.5);
+}
+
+.filtros {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+}
+
+.filtros button {
+  background: rgba(0,0,0,.35);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.busca {
+  margin-bottom: 20px;
+}
+
+.busca input {
+  background: rgba(0,0,0,.35);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.lista {
+  display: grid;
+  gap: 15px;
+}
+
+.card {
+  background: rgba(15,15,15,.35);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  background: rgba(15,15,15,.45);
+
+  box-shadow:
+    0 0 25px rgba(124,58,237,.4);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: rgba(255,255,255,.85);
+  margin-bottom: 5px;
+}
+
+.acoes {
+  margin-top: 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.acoes button {
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+.excluir {
+  background: linear-gradient(
+    135deg,
+    #dc2626,
+    #991b1b
+  );
+}
+
+.area-exibir-mais {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 25px;
+}
+
+#btnExibirMais {
+  padding: 15px 40px;
+
+  border-radius: 15px;
+
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+
+  .acoes button {
+    width: 100%;
+  }
+
+}
+.contadores {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.contadores div {
+  background: rgba(20, 10, 25, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.contadores span {
+  color: #a78bfa;
+}
+
+.progresso {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,.15);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.barra {
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #a855f7);
+  border-radius: 20px;
+  transition: .4s;
+}
+
+.nota {
+  color: #facc15;
+  font-weight: 700;
+}
+
+.controle-episodios {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controle-episodios button {
+  padding: 8px 12px;
+}

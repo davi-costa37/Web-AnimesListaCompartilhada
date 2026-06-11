@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Minha Lista de Animes</title>
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <h1>Minha Lista de Animes</h1>
+
+    <section class="formulario">
+
+      <input
+        type="text"
+        id="nomeAnime"
+        placeholder="Nome do anime"
+      >
+
+      <input
+        type="text"
+        id="generoAnime"
+        placeholder="Gênero"
+      >
+
+      <input
+        type="number"
+        id="episodiosAnime"
+        placeholder="Episódios"
+      >
+
+      <input type="number" id="episodiosAssistidos" placeholder="Episódios assistidos" min="0">
+      <input type="number" id="nota" placeholder="Nota de 1 a 10" min="1" max="10">
+
+      <select id="statusAnime">
+        <option value="Quero assistir">Quero assistir</option>
+        <option value="Assistindo">Assistindo</option>
+        <option value="Assistido">Assistido</option>
+      </select>
+
+      <button onclick="adicionarAnime()">
+        Adicionar Anime
+      </button>
+
+    </section>
+
+    <section class="contadores">
+      <div>Total: <span id="contadorTotal">0</span></div>
+      <div>Quero assistir: <span id="contadorQuero">0</span></div>
+      <div>Assistindo: <span id="contadorAssistindo">0</span></div>
+      <div>Assistido: <span id="contadorAssistido">0</span></div>
+    </section>
+
+    <section class="filtros">
+
+      <button onclick="filtrarAnimes('Todos')">
+        Todos
+      </button>
+
+      <button onclick="filtrarAnimes('Quero assistir')">
+        Quero assistir
+      </button>
+
+      <button onclick="filtrarAnimes('Assistindo')">
+        Assistindo
+      </button>
+
+      <button onclick="filtrarAnimes('Assistido')">
+        Assistido
+      </button>
+
+    </section>
+
+    <section class="busca">
+
+      <input
+        type="text"
+        id="buscaAnime"
+        placeholder="Pesquisar anime..."
+        onkeyup="mostrarAnimes()"
+      >
+
+    </section>
+
+    <section id="listaAnimes" class="lista"></section>
+
+    <div class="area-exibir-mais">
+      <button id="btnExibirMais" onclick="exibirMais()">
+        Exibir mais
+      </button>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
